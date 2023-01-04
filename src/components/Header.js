@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 //import Navigation from './Navigation'
 
-//import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const Header = ( {title} ) => {
 
@@ -12,9 +12,12 @@ const Header = ( {title} ) => {
         { title: 'resume' }
     ]
 
-    function sectionSelected(title) {
-        console.log(`currently viewing ${title}`)
-    }
+    const [currSection, setCurrSection] = useState(navSections[0])
+
+    // change the tab title in response to currently viewed section of the application
+    useEffect(() => {
+        document.title = currSection.title
+    }, [currSection])
         
   return (
     <header className='header'>
@@ -28,8 +31,8 @@ const Header = ( {title} ) => {
             <ul className='flex-row'>
                 
                 {navSections.map((section) => (
-                    <li className='' key={section.title}> 
-                        <span onClick={() => sectionSelected(section.title)}>{section.title}</span>
+                    <li className={currSection.title === section.title && 'navActive'} key={section.title}> 
+                        <span onClick={() => setCurrSection(section)}>{section.title}</span>
                     </li>
                 ))}
                 

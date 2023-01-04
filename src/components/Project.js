@@ -27,17 +27,17 @@
 
 const Project = ({projects}) => {
 
-    
+    const {id, title, repo, scr} = projects;
 
   return (
 
     <h1>projects placeholder</h1>
     // <>
     //     {projects.map( (project) => (
-    //         <div key={project.id}>
-    //             <h3>{project.title}</h3>
-    //             <h4>{project.repo}</h4>
-    //             <img src={project.scr} style={{width: "30%"}} alt='appScreenshot'></img>
+    //         <div key={id}>
+    //             <h3>{title}</h3>
+    //             <h4>{repo}</h4>
+    //             <img src={scr} style={{width: "30%"}} alt='appScreenshot'></img>
     //         </div>
     //     ))}
     // </>

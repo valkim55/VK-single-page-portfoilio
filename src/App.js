@@ -37,20 +37,40 @@ function App() {
         
         <main>
             <section id='about'>
-                <h1>Bio</h1>
+                <h1>about me</h1>
                 <p>lalala</p>
                 <img src={profilePic} className='my-2' style={{width: "30%"}} alt='myProfilePicture'></img>
             </section>
 
             <Project projects={projects} />
 
+            {/* reach out form */}
             <section id='contact'>
-                <h1>reach out form</h1>
-                <p>to reach out do this</p>
+                <h1>reach out</h1>
+                <p>if you're hiring or would like to collaborate please refer to the form below</p>
+                <form id=''>
+                    <div>
+                        <label htmlFor='name'>name:</label>
+                        <input type='text' name='name' />
+                    </div>
+
+                    <div>
+                        <label htmlFor='email'>email:</label>
+                        <input type='email' name='email' />
+                    </div>
+
+                    <div>
+                        <label htmlFor='message'>message:</label>
+                        <textarea name='message' />
+                    </div>
+
+                    <button type='submit'>submit</button>
+                </form>
                 
             </section>
 
             <section>
+                <h1>resume</h1>
                 <div>
                     <h4>tech stack</h4>
                     <ul>Backend
@@ -61,6 +81,9 @@ function App() {
                     </ul>
                 </div>
             </section>
+
+          
+
 
             <Footer />
         </main>
