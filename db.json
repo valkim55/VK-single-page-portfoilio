@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+        "id": 1,
+        "title": "E-Commerce Backend App",
+        "repo": "https://github.com/valkim55/VK-ORM-e-commerce-store",
+        "scr": "./assets/e-commerce-img.png"
+    },
+    {
+        "id": 2,
+        "title": "API for a Social Network",
+        "repo": "https://github.com/valkim55/VK-social-network-API",
+        "scr": "./assets/sn-api-img.png"
+    },
+    {
+        "id": 3,
+        "title": "RESTful API Tech Blog",
+        "repo": "https://github.com/valkim55/VK-tech-blog",
+        "scr": "./assets/tech-blog-img.png"
+    },
+    {
+        "id": 4,
+        "title": "CMS tracker for Node.js",
+        "repo": "https://github.com/valkim55/VK-CMS-tracker",
+        "scr": "./assets/cms-tracker-img.png"
+    },
+    {
+        "id": 5,
+        "title": "Digital Planner React App",
+        "repo": "https://github.com/valkim55/VK-react-task-tracker",
+        "scr": "./assets/react-planner-img.png"
+    },
+    {
+        "id": 6,
+        "title": "PWA Contact Book",
+        "repo": "https://github.com/valkim55/VK-contact-card",
+        "scr": "./assets/pwa-img.png"
+    }
+    
+  ]
+}

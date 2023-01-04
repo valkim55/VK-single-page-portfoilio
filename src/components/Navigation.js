@@ -1,13 +1,16 @@
 //import { Link } from 'react-router-dom'
+//import { useState } from 'react'
+import Project from './Project'
 
 const Navigation = () => {
-  return (
-    <nav>
-        <h4>About Me</h4>
-        <h4>My Projects</h4>
-        <h4>Reach out</h4>
-    </nav>
-  )
+
+    
+    
+
+    return (
+
+        <Project />
+    )
 }
 
 export default Navigation
