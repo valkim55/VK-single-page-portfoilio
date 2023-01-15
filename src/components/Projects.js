@@ -1,5 +1,31 @@
-{
-  "projects": [
+import Github from './extra/Github'
+
+// use props to reuse this component multiple times with different projects in App.js
+// React.createElement(
+    // "div", 
+    // {props}, 
+    // [
+        // React.createElement(
+            // "h2", 
+            // {}, 
+            // E-Commerce Backend
+        // ), 
+    
+        // React.createElement(
+            // "h4", 
+            // {}, 
+            // GitHub Repo
+        // ), 
+        
+        // React.createElement(
+            // "img", 
+            // {}, 
+            // GitHub Repo
+        // )
+    // ]
+//)
+
+const projects = [
     {
         "id": 1,
         "title": "E-Commerce Backend App",
@@ -37,6 +63,27 @@
         "scr": "./src/assets/pwa-img.png"
     }
     
-  ]
+]
+
+const Project = () => {
+
+    
+    
+
+  return (
+    <div>
+        
+        <Github />
+        {projects.map( ( {id, title, repo, scr} ) => (
+            <div key={id}>
+                <h3>{title}</h3>
+                <h4>{repo}</h4>
+                <img src={scr} style={{width: "30%"}} alt='appScreenshot'></img>
+           </div>
+       ))} 
+    
+    </div>
+  )
 }
 
+export default Project

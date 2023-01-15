@@ -1,93 +1,78 @@
-import { useState, useEffect } from 'react'
+//import { useState, useEffect } from 'react'
+
+// bring in the router
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Project from './components/Project'
+import Contact from './components/Contact'
+import Projects from './components/Projects'
+import Resume from './components/Resume'
 import profilePic from './assets/profilePic.jpg'
 
 
 function App() {
 
-    const [projects, setProjects] = useState([])
+    // const [projects, setProjects] = useState([])
 
-    useEffect( () => {
-        const getProjects = async () => {
-            const allProjects = await fetchProjects()
-            setProjects(allProjects)
-            //console.log('hi')
-        };
+    // useEffect( () => {
+    //     const getProjects = async () => {
+    //         const allProjects = await fetchProjects()
+    //         setProjects(allProjects)
+    //         //console.log('hi')
+    //     };
 
-        getProjects();
+    //     getProjects();
 
-    })
+    // })
 
-    const fetchProjects = async () => {
-        const res = await fetch('http://localhost:5001/projects')
-        const data = await res.json()
-        //console.log(data)
+    // const fetchProjects = async () => {
+    //     const res = await fetch('http://localhost:5001/projects')
+    //     const data = await res.json()
+    //     //console.log(data)
         
-        return data
-    }
+    //     return data
+    // }
 
-
+    
 
   return (
-    <div className="App">
-        <Header />
-        
-        <main>
-            <section id='about'>
-                <h1>about me</h1>
-                <p>lalala</p>
-                <img src={profilePic} className='my-2' style={{width: "30%"}} alt='myProfilePicture'></img>
-            </section>
+    <Router>
+        <div className="App">
+            <Header />
+            
+            <main>
+                <Routes>
+                    <Route path='/' element={
+                    <>
+                        <section id='about'>
+                            <h1>about me</h1>
+                            <p>lalala</p>
+                            <img src={profilePic} className='my-2' style={{width: "30%"}} alt='myProfilePicture'></img>
+                        </section>
+                    </>
+                    }/>
 
-            <Project projects={projects} />
+                    <Route path='/projects' element={
+                        <Projects  />
+                    } />
+                        
+                    <Route path='/contact' element={
+                        <Contact />
+                    } />
+                                               
+                    <Route path='/resume' element={
+                        <Resume />
+                    } />
+                        
 
-            {/* reach out form */}
-            <section id='contact'>
-                <h1>reach out</h1>
-                <p>if you're hiring or would like to collaborate please refer to the form below</p>
-                <form id=''>
-                    <div>
-                        <label htmlFor='name'>name:</label>
-                        <input type='text' name='name' />
-                    </div>
-
-                    <div>
-                        <label htmlFor='email'>email:</label>
-                        <input type='email' name='email' />
-                    </div>
-
-                    <div>
-                        <label htmlFor='message'>message:</label>
-                        <textarea name='message' />
-                    </div>
-
-                    <button type='submit'>submit</button>
-                </form>
-                
-            </section>
-
-            <section>
-                <h1>resume</h1>
-                <div>
-                    <h4>tech stack</h4>
-                    <ul>Backend
-                        <li>...</li>
-                    </ul>
-                    <ul>Frontend
-                        <li>...</li>
-                    </ul>
-                </div>
-            </section>
-
-          
+                </Routes>
 
 
-            <Footer />
-        </main>
-    </div>
+                <Footer />
+            </main>
+        </div>
+    </Router>
   );
 }
 
